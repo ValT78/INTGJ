@@ -14,11 +14,17 @@ public class ObjetAPorter : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player")){
-            taon.objetPorte = gameObject;
+            if (taon.objetPorte == null)
+            {
+                taon.objetPorte = gameObject;
+            }
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        taon.objetPorte = null;
+        if (other.CompareTag("Player"))
+        {if (taon.objetPorte==this)
+            taon.objetPorte = null;
+        }
     }
 }

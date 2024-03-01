@@ -22,12 +22,14 @@ public class PorterObjet : MonoBehaviour
             {
                 porter = false;
                 objetPorte.transform.SetParent(null);
+                objetPorte= null;
             }
             else
             {
-                porter = true;
+                
                 if (objetPorte != null)
                 {
+                    porter = true;
                     objetPorte.transform.SetParent(this.transform);
                 }
             }
