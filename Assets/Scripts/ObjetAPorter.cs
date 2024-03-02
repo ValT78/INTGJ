@@ -13,14 +13,14 @@ public class ObjetAPorter : MonoBehaviour
         if (other.TryGetComponent<PorterObjet>(out var porterObjet)){
             if (porterObjet.objetPorte == null)
             {
-                porterObjet.objetPorte = gameObject;
+                porterObjet.objetPorte = gameObject.transform.parent.gameObject;
             }
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent<PorterObjet>(out var porterObjet))
-        {if (porterObjet.objetPorte==gameObject && porterObjet.porter==false)
+        {if (porterObjet.objetPorte== gameObject.transform.parent.gameObject && porterObjet.porter==false)
             porterObjet.objetPorte = null;
         }
     }
