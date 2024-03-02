@@ -25,16 +25,15 @@ public class SoundManager : MonoBehaviour
 
     [Header("Sound effects")]
 
-    public AudioClip jump;
-    public AudioClip damage;
-    public AudioClip punch;
-    public AudioClip cashing;
-    public AudioClip building;
-    public AudioClip breakSomething;
-    public AudioClip totalDestruction;
-    public AudioClip electricity;
-    public AudioClip plusVite;
-    public AudioClip bowArrow;
+    public AudioClip depression;
+    public AudioClip morse;
+    public AudioClip openDoor;
+    public AudioClip dialToilette;
+    public AudioClip dialApiculteur;
+    public AudioClip piqure;
+    public AudioClip chest;
+    public AudioClip anvil;
+    public AudioClip bee;
 
     [Header("Audio Mixer")]
 
