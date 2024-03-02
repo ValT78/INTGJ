@@ -5,6 +5,7 @@ using UnityEngine;
 public class PorterObjet : MonoBehaviour
 {
     private int force;
+    [SerializeField] private float agrandissement;
 
     [HideInInspector] public GameObject objetPorte;
     [HideInInspector] public bool porter;
@@ -82,6 +83,7 @@ public class PorterObjet : MonoBehaviour
         else if (force == 4)
             soundManager.nextLoop = soundManager.bzz5;
 
+        this.transform.localScale = this.transform.localScale + Vector3.one*agrandissement;
     }
     public int GetForce()
     {

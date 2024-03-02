@@ -1766,6 +1766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 515a45d454bdecb44b488356b4977200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agrandissement: 2
   objetPorte: {fileID: 0}
   porter: 0
 --- !u!114 &2722981930351513367
