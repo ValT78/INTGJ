@@ -74,15 +74,17 @@ public class PorterObjet : MonoBehaviour
     public void PlusFort()
     {
         force += 1;
-        if(force == 1)
-            soundManager.nextLoop = soundManager.bzz3;
-        else if (force == 2)
-            soundManager.nextLoop = soundManager.bzz4;
-        else if (force == 3)
-            soundManager.nextLoop = soundManager.bzz4;
-        else if (force == 4)
-            soundManager.nextLoop = soundManager.bzz5;
-
+        if (soundManager != null)
+        {
+            if (force == 1)
+                soundManager.nextLoop = soundManager.bzz3;
+            else if (force == 2)
+                soundManager.nextLoop = soundManager.bzz4;
+            else if (force == 3)
+                soundManager.nextLoop = soundManager.bzz4;
+            else if (force == 4)
+                soundManager.nextLoop = soundManager.bzz5;
+        }
         this.transform.localScale = this.transform.localScale + Vector3.one*agrandissement;
     }
     public int GetForce()
