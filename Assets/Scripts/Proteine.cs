@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class Proteine : MonoBehaviour
 {
-    
+    [SerializeField] float vitesseRotation = 50f;
+
     // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
+        transform.Rotate(Vector3.up, vitesseRotation * Time.deltaTime);
     }
 
     // Update is called once per frame
