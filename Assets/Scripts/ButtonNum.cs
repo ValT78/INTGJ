@@ -9,10 +9,19 @@ public class ButtonNum : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Bouton touché");
+
         if (collision.gameObject.CompareTag("Crayon")) // il faut créer le tag "Crayon"
         {
             Debug.Log(num);
             codeFrigo.ToucheBouton(num);
         }
     }
+
+    public void BoutonAppuyé()
+    {
+        Debug.Log(num);
+        codeFrigo.ToucheBouton(num);
+    }
+
 }
