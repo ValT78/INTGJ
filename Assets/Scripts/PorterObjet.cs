@@ -7,7 +7,7 @@ public class PorterObjet : MonoBehaviour
     private int force;
 
     [HideInInspector] public GameObject objetPorte;
-    private bool porter;
+    [HideInInspector] public bool porter;
     
  
     // Start is called before the first frame update
@@ -29,8 +29,12 @@ public class PorterObjet : MonoBehaviour
                 {
                     objetPorte.transform.SetParent(null);
                     objetPorte.GetComponent<Rigidbody>().useGravity = true;
+                    objetPorte.GetComponent<Rigidbody>().isKinematic = false;
                     objetPorte.layer = LayerMask.NameToLayer("Default");
+                    objetPorte.GetComponent<Collider>().enabled = true;
+                    
                     objetPorte = null;
+
 
                 }
 
@@ -45,7 +49,9 @@ public class PorterObjet : MonoBehaviour
                         porter = true;
                         objetPorte.transform.SetParent(this.transform);
                         objetPorte.GetComponent<Rigidbody>().useGravity = false;
-                        objetPorte.layer = LayerMask.NameToLayer("IgnoreRaycast");
+                        objetPorte.layer = LayerMask.NameToLayer("Ignore Raycast");
+                        objetPorte.GetComponent<Collider>().enabled = false;
+                        objetPorte.GetComponent<Rigidbody>().isKinematic = true;
                     }
                 }
             }
@@ -58,15 +64,6 @@ public class PorterObjet : MonoBehaviour
             }
             else { print("vous avez besoin de plus de force"); }
 
-        }
-    }
-    public void Eloignement(GameObject objet) 
-    {
-        if (porter) {
-            porter = false;
-            objet.transform.SetParent(null);
-            objet.GetComponent<Rigidbody>().useGravity = true;
-            objet.layer = LayerMask.NameToLayer("Default");
         }
     }
        
