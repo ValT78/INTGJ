@@ -11,6 +11,7 @@ public class CodeFrigo : MonoBehaviour
     [SerializeField] private OuvertureObjet ouvertureObjet;
 
     [SerializeField] private TextMeshProUGUI textMeshProUGUI;
+    [SerializeField] private AudioSource audioSource;
 
     public void ToucheBouton(int valeur) // appelée à chaque fois qu'un bouton est touché
     {
@@ -22,6 +23,8 @@ public class CodeFrigo : MonoBehaviour
         if (CodeCorrect())
         {
             ouvertureObjet.frigoDébloqué = true;
+            audioSource.Play();
+
             textMeshProUGUI.color = Color.green;
             textMeshProUGUI.text = "Code Correct !";
         }
