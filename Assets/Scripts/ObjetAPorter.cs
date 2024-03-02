@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObjetAPorter : MonoBehaviour
 {
     PorterObjet taon;
+    public int poids;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +24,10 @@ public class ObjetAPorter : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-        {if (taon.objetPorte==this)
+        {if (taon.objetPorte==gameObject)
+            taon.Eloignement(taon.objetPorte);
             taon.objetPorte = null;
         }
+
     }
 }
