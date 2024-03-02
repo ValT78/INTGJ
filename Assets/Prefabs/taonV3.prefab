@@ -163,6 +163,8 @@ MonoBehaviour:
   agrandissement: 0.2
   objetPorte: {fileID: 0}
   porter: 0
+  noWheyUI: {fileID: 2614409211647745600, guid: 8631ee9107d31f14fb20285158309aaa, type: 3}
+  howPorter: {fileID: 3867879886590182382, guid: c4fc888c85776d3428f913fcc1216013, type: 3}
 --- !u!114 &531867833107914963
 MonoBehaviour:
   m_ObjectHideFlags: 0
