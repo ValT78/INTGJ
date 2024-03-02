@@ -7,25 +7,15 @@ public class CodeFrigo : MonoBehaviour
     [SerializeField] private List<int> codeDeverrouillage = new List<int>() {1, 2, 3};
     [SerializeField] private List<int> codeTouche = new List<int>();
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    [SerializeField] private OuvertureObjet ouvertureObjet;
 
     public void ToucheBouton(int valeur) // appelée à chaque fois qu'un bouton est touché
     {
-        Debug.Log("Bouton touché !");
-
         codeTouche.Add(valeur);
 
         if (CodeCorrect())
         {
-            OuvrirCoffre();
+            ouvertureObjet.frigoDébloqué = true;
         }
     }
 
@@ -45,11 +35,6 @@ public class CodeFrigo : MonoBehaviour
         }
 
         return true;
-    }
-
-    private void OuvrirCoffre()
-    {
-        Debug.Log("Coffre ouvert !");
     }
 
     public void Reset()
