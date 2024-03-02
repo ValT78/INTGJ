@@ -25,7 +25,9 @@ public class ObjetAPorter : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {if (taon.objetPorte==gameObject)
+            taon.Eloignement(taon.objetPorte);
             taon.objetPorte = null;
         }
+
     }
 }

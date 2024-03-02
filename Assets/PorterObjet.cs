@@ -7,6 +7,7 @@ public class PorterObjet : MonoBehaviour
     private int force;
 
     [HideInInspector] public GameObject objetPorte;
+    private GameObject lastObjetPorte;
     private bool porter;
     
  
@@ -25,35 +26,49 @@ public class PorterObjet : MonoBehaviour
             if (porter)
             {
                 porter = false;
-                objetPorte.transform.SetParent(null);
-                objetPorte= null;
+                if (objetPorte != null)
+                {
+                    objetPorte.transform.SetParent(null);
+                    objetPorte.GetComponent<Rigidbody>().useGravity = true;
+                    objetPorte = null;
+                }
+
             }
             else
             {
-                
+
                 if (objetPorte != null)
                 {
                     if (objetPorte.GetComponent<ObjetAPorter>().poids <= force)
                     {
                         porter = true;
                         objetPorte.transform.SetParent(this.transform);
+                        objetPorte.GetComponent<Rigidbody>().useGravity = false;
+                        lastObjetPorte = objetPorte;
                     }
                 }
             }
         }
-        if(!porter && objetPorte != null )
+        if (!porter && objetPorte != null)
         {
-            if(objetPorte.GetComponent<ObjetAPorter>().poids <= force)
+            if (objetPorte.GetComponent<ObjetAPorter>().poids <= force)
             {
                 print("portez avec clique gauche");
             }
             else { print("vous avez besoin de plus de force"); }
-            
-        }
 
-      
-       
+        }
     }
+    public void Eloignement(GameObject objet) 
+    {
+        if (porter) {
+            porter = false;
+            objet.transform.SetParent(null);
+            objet.GetComponent<Rigidbody>().useGravity = true;
+        }
+    }
+       
+    
     public void PlusFort()
     {
         force += 1;
