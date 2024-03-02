@@ -11,7 +11,10 @@ public class PorterObjet : MonoBehaviour
     [HideInInspector] public bool porter;
 
     private SoundManager soundManager;
- 
+
+    [SerializeField] private GameObject noWheyUI;
+    [SerializeField] private GameObject howPorter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,15 +62,7 @@ public class PorterObjet : MonoBehaviour
                 }
             }
         }
-        if (!porter && objetPorte != null)
-        {
-            if (objetPorte.GetComponentInChildren<ObjetAPorter>().poids <= force)
-            {
-                print("portez avec clique gauche");
-            }
-            else { print("vous avez besoin de plus de force"); }
-
-        }
+        
     }
        
     
@@ -77,9 +72,9 @@ public class PorterObjet : MonoBehaviour
         if (soundManager != null)
         {
             if (force == 1)
-                soundManager.nextLoop = soundManager.bzz3;
+                soundManager.nextLoop = soundManager.bzz2;
             else if (force == 2)
-                soundManager.nextLoop = soundManager.bzz4;
+                soundManager.nextLoop = soundManager.bzz3;
             else if (force == 3)
                 soundManager.nextLoop = soundManager.bzz4;
             else if (force == 4)
@@ -92,5 +87,10 @@ public class PorterObjet : MonoBehaviour
         return (force);
     }
     
-    
+    public void ShowUI(int poids)
+    {
+        if(poids <= force) Instantiate(howPorter);
+        else Instantiate(noWheyUI);
+    }
+
 }
