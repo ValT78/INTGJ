@@ -24,18 +24,25 @@ public class TaonMovement : MonoBehaviour
     void Update()
     {
         
+        Rotation();
 
+        Movement();
+
+        CameraMovement();
+    }
+
+    private void Rotation()
+    {
         // Rotation de l'objet volant en fonction de la souris
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(-mouseY * rotationSpeed, mouseX * rotationSpeed, 0f));
 
-        // Limiter la rotation verticale de l'objet volant
-        Vector3 currentRotation = transform.localEulerAngles;
-        currentRotation.y = Mathf.Clamp(currentRotation.y, 0, 360f);
-/*        currentRotation.x = Mathf.Clamp(currentRotation.x, -maxCameraRotationX, maxCameraRotationX);
-*/        transform.localEulerAngles = currentRotation;
+        Vector3 rotationEuler = new(Mathf.Clamp(-mouseY * rotationSpeed, -maxCameraRotationX, maxCameraRotationX), mouseX * rotationSpeed, 0f);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotationEuler);
+    }
 
+    private void Movement()
+    {
         // Mouvement de l'objet volant
         Vector3 moveDirection = transform.forward * speed;
         ;
@@ -43,7 +50,9 @@ public class TaonMovement : MonoBehaviour
         {
             rb.MovePosition(rb.position + moveDirection * Time.deltaTime);
         }
-
+    }
+    private void CameraMovement()
+    {
         // Déplacement de la caméra de manière lissée
         Vector3 cameraTargetPosition = transform.position - transform.forward * cameraDistance;
 
@@ -52,13 +61,8 @@ public class TaonMovement : MonoBehaviour
             // Si un obstacle est détecté, ajuster la position de la caméra
             cameraTargetPosition = cameraHit.point;
         }
-        cameraTargetPosition += transform.up * cameraHeight;
+        cameraTargetPosition += Vector3.up * cameraHeight;
         Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, cameraTargetPosition, ref cameraVelocity, cameraSmoothTime);
-
-        // Rotation de la caméra limitée autour de l'axe vertical
-        /*Vector3 cameraEulerAngles = Camera.main.transform.localEulerAngles;
-        cameraEulerAngles.x = Mathf.Clamp(cameraEulerAngles.x, -maxCameraRotationY, maxCameraRotationY);
-        Camera.main.transform.localEulerAngles = cameraEulerAngles;*/
 
         Camera.main.transform.LookAt(transform.position);
     }
