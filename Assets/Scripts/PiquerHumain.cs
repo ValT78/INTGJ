@@ -17,8 +17,7 @@ public class PiquerHumain : MonoBehaviour
         {
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hitInfo;
-            Debug.Log(ray.ToString());
-            if (Physics.Raycast(ray, out hitInfo, 5f))
+            if (Physics.Raycast(ray, out hitInfo, 3f))
             {
                 // Vérifier si l'objet détecté est celui que vous voulez
                 if (hitInfo.collider.TryGetComponent<HumainZone>(out var humainzone))
