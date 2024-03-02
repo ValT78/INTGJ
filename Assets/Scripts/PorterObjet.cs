@@ -45,7 +45,7 @@ public class PorterObjet : MonoBehaviour
                         porter = true;
                         objetPorte.transform.SetParent(this.transform);
                         objetPorte.GetComponent<Rigidbody>().useGravity = false;
-                        objetPorte.layer = LayerMask.NameToLayer("Objet");
+                        objetPorte.layer = LayerMask.NameToLayer("IgnoreRaycast");
                     }
                 }
             }
