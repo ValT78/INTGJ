@@ -45,7 +45,7 @@ public class PorterObjet : MonoBehaviour
 
                 if (objetPorte != null)
                 {
-                    if (objetPorte.GetComponent<ObjetAPorter>().poids <= force)
+                    if (objetPorte.GetComponentInChildren<ObjetAPorter>().poids <= force)
                     {
                         porter = true;
                         objetPorte.transform.SetParent(this.transform);
@@ -59,7 +59,7 @@ public class PorterObjet : MonoBehaviour
         }
         if (!porter && objetPorte != null)
         {
-            if (objetPorte.GetComponent<ObjetAPorter>().poids <= force)
+            if (objetPorte.GetComponentInChildren<ObjetAPorter>().poids <= force)
             {
                 print("portez avec clique gauche");
             }
