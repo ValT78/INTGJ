@@ -9,13 +9,15 @@ public class PorterObjet : MonoBehaviour
 
     [HideInInspector] public GameObject objetPorte;
     [HideInInspector] public bool porter;
-    
+
+    private SoundManager soundManager;
  
     // Start is called before the first frame update
     void Start()
     {
         porter = false;
         force = 0;
+        soundManager = SoundManager.Instance;
     }
 
     // Update is called once per frame
@@ -45,7 +47,7 @@ public class PorterObjet : MonoBehaviour
 
                 if (objetPorte != null)
                 {
-                    if (objetPorte.GetComponent<ObjetAPorter>().poids <= force)
+                    if (objetPorte.GetComponentInChildren<ObjetAPorter>().poids <= force)
                     {
                         porter = true;
                         objetPorte.transform.SetParent(this.transform);
@@ -59,7 +61,7 @@ public class PorterObjet : MonoBehaviour
         }
         if (!porter && objetPorte != null)
         {
-            if (objetPorte.GetComponent<ObjetAPorter>().poids <= force)
+            if (objetPorte.GetComponentInChildren<ObjetAPorter>().poids <= force)
             {
                 print("portez avec clique gauche");
             }
@@ -72,6 +74,17 @@ public class PorterObjet : MonoBehaviour
     public void PlusFort()
     {
         force += 1;
+        if (soundManager != null)
+        {
+            if (force == 1)
+                soundManager.nextLoop = soundManager.bzz3;
+            else if (force == 2)
+                soundManager.nextLoop = soundManager.bzz4;
+            else if (force == 3)
+                soundManager.nextLoop = soundManager.bzz4;
+            else if (force == 4)
+                soundManager.nextLoop = soundManager.bzz5;
+        }
         this.transform.localScale = this.transform.localScale + Vector3.one*agrandissement;
     }
     public int GetForce()

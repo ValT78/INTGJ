@@ -10,7 +10,7 @@ public class Proteine : MonoBehaviour
     // Start is called before the first frame update
     private void Update()
     {
-        transform.Rotate(Vector3.back, vitesseRotation * Time.deltaTime);
+        transform.Rotate(Vector3.up, vitesseRotation * Time.deltaTime);
     }
 
     // Update is called once per frame
