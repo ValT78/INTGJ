@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button1 : MonoBehaviour
+public class ResetButton : MonoBehaviour
 {
     [SerializeField] private CodeFrigo codeFrigo;
 
@@ -10,9 +10,7 @@ public class Button1 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Crayon")) // il faut créer le tag "Crayon"
         {
-            Debug.Log("1");
-            codeFrigo.ToucheBouton(1);
+            codeFrigo.Reset();
         }
     }
-
 }
