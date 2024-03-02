@@ -8,10 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2707399518398295019}
-  - component: {fileID: 1532355837159343056}
-  - component: {fileID: 7939524008103533528}
-  m_Layer: 0
+  - component: {fileID: 1755966883391530872}
+  - component: {fileID: 6081398427417066880}
+  - component: {fileID: 4679548439920048834}
+  - component: {fileID: 4111062940664949610}
+  - component: {fileID: 6622064529801724366}
+  m_Layer: 2
   m_Name: Proteine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
