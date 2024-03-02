@@ -8,13 +8,15 @@ public class PorterObjet : MonoBehaviour
 
     [HideInInspector] public GameObject objetPorte;
     [HideInInspector] public bool porter;
-    
+
+    private SoundManager soundManager;
  
     // Start is called before the first frame update
     void Start()
     {
         porter = false;
         force = 0;
+        soundManager = SoundManager.Instance;
     }
 
     // Update is called once per frame
@@ -71,6 +73,15 @@ public class PorterObjet : MonoBehaviour
     public void PlusFort()
     {
         force += 1;
+        if(force == 1)
+            soundManager.nextLoop = soundManager.bzz3;
+        else if (force == 2)
+            soundManager.nextLoop = soundManager.bzz4;
+        else if (force == 3)
+            soundManager.nextLoop = soundManager.bzz4;
+        else if (force == 4)
+            soundManager.nextLoop = soundManager.bzz5;
+
     }
     public int GetForce()
     {
