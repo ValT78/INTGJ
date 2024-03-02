@@ -7,7 +7,6 @@ public class PorterObjet : MonoBehaviour
     private int force;
 
     [HideInInspector] public GameObject objetPorte;
-    private GameObject lastObjetPorte;
     private bool porter;
     
  
@@ -30,7 +29,9 @@ public class PorterObjet : MonoBehaviour
                 {
                     objetPorte.transform.SetParent(null);
                     objetPorte.GetComponent<Rigidbody>().useGravity = true;
+                    objetPorte.layer = LayerMask.NameToLayer("Default");
                     objetPorte = null;
+
                 }
 
             }
@@ -44,7 +45,7 @@ public class PorterObjet : MonoBehaviour
                         porter = true;
                         objetPorte.transform.SetParent(this.transform);
                         objetPorte.GetComponent<Rigidbody>().useGravity = false;
-                        lastObjetPorte = objetPorte;
+                        objetPorte.layer = LayerMask.NameToLayer("Objet");
                     }
                 }
             }
@@ -65,6 +66,7 @@ public class PorterObjet : MonoBehaviour
             porter = false;
             objet.transform.SetParent(null);
             objet.GetComponent<Rigidbody>().useGravity = true;
+            objet.layer = LayerMask.NameToLayer("Default");
         }
     }
        
