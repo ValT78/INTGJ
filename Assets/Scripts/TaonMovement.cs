@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class TaonMovement : MonoBehaviour
 {
-    [SerializeField] private float speed; // Vitesse de dÈplacement de l'objet volant
+    [SerializeField] private float speed; // Vitesse de d√©placement de l'objet volant
     [SerializeField] private float rotationSpeed; // Vitesse de rotation de l'objet volant
-    [SerializeField] private float cameraDistance; // Distance de la camÈra derriËre l'objet volant
-    [SerializeField] private float cameraSmoothTime; // Temps de lissage du mouvement de la camÈra
-    [SerializeField] private float maxCameraRotationX; // Angle maximal de rotation de la camÈra autour de l'axe vertical
-    [SerializeField] private float cameraHeight; // Angle maximal de rotation de la camÈra autour de l'axe horizontal
-    [SerializeField] private float obstacleDistance; // Distance ‡ laquelle un obstacle peut bloquer le mouvement
+    [SerializeField] private float cameraDistance; // Distance de la cam√©ra derri√®re l'objet volant
+    [SerializeField] private float cameraSmoothTime; // Temps de lissage du mouvement de la cam√©ra
+    [SerializeField] private float maxCameraRotationX; // Angle maximal de rotation de la cam√©ra autour de l'axe vertical
+    [SerializeField] private float minCameraRotationX; // Angle minimal de rotation de la cam√©ra autour de l'axe vertical
+    [SerializeField] private float cameraHeight; // Angle maximal de rotation de la cam√©ra autour de l'axe horizontal
+    [SerializeField] private float obstacleDistance; // Distance √† laquelle un obstacle peut bloquer le mouvement
+
+
+    /// <summary>
+    ///  [SerializeField] private Camera 
+    /// </summary>
 
     [SerializeField] private Rigidbody rb;
     private Vector3 cameraVelocity = Vector3.zero;
@@ -52,7 +58,8 @@ public class TaonMovement : MonoBehaviour
         {
             rotationEuler.x = maxCameraRotationX;
         }
-        
+
+
         transform.rotation = Quaternion.Euler(rotationEuler);
     }
 
@@ -61,25 +68,27 @@ public class TaonMovement : MonoBehaviour
         // Mouvement de l'objet volant
         Vector3 moveDirection = transform.forward * speed;
 
-        if (!Physics.Raycast(transform.position, transform.forward, out _, obstacleDistance))
+        if (!Physics.Raycast(transform.position + 0.01f*transform.forward, transform.forward, out _, obstacleDistance))
         {
-            rb.MovePosition(rb.position + moveDirection * Time.deltaTime);
+            transform.position += moveDirection * Time.deltaTime;
+           // rb.MovePosition(transform.position + moveDirection * Time.deltaTime);
         }
         
     }
     private void CameraMovement()
     {
-        // DÈplacement de la camÈra de maniËre lissÈe
+        // D√©placement de la cam√©ra de mani√®re liss√©e
         Vector3 cameraTargetPosition = transform.position - transform.forward * cameraDistance;
 
-        if (Physics.Raycast(transform.position, -transform.forward, out RaycastHit cameraHit, cameraDistance))
+        if (Physics.Raycast(transform.position, -transform.forward, out RaycastHit cameraHit, cameraDistance*1.1f))
         {
-            // Si un obstacle est dÈtectÈ, ajuster la position de la camÈra
+            // Si un obstacle est d√©tect√©, ajuster la position de la cam√©ra
             cameraTargetPosition = cameraHit.point;
+            Debug.Log("Collider detected");
         }
         cameraTargetPosition += transform.up * cameraHeight;
         Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, cameraTargetPosition, ref cameraVelocity, cameraSmoothTime);
 
-        Camera.main.transform.LookAt(transform.position);
+        //Camera.main.transform.LookAt(transform.position);
     }
 }
