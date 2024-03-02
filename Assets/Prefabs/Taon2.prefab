@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6249137066735909155}
   - component: {fileID: 39514903729942820}
   - component: {fileID: 7324157160039302039}
+  - component: {fileID: 9149039012318194092}
+  - component: {fileID: 2722981930351513367}
   m_Layer: 0
   m_Name: Taon2
   m_TagString: Untagged
@@ -154,3 +156,28 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &9149039012318194092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8823636885990876125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515a45d454bdecb44b488356b4977200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetPorte: {fileID: 0}
+--- !u!114 &2722981930351513367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8823636885990876125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6786e7d044bf93419c87b3d01433cff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
