@@ -474,11 +474,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f10eeec0d504f542a231f0591844b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 200
   rotationSpeed: 50
   cameraDistance: 10
   cameraSmoothTime: 0.2
   maxCameraRotationX: 80
+  cameraHeight: 5
   rb: {fileID: 906459034}
 --- !u!65 &906459036
 BoxCollider:
