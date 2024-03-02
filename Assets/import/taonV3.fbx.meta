@@ -1,9 +1,29 @@
 fileFormatVersion: 2
-guid: dcb213f540a75a84dae50c9206bd13b4
+guid: fe4f8dbfe86ce594f8c1861dc30f1d63
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ailes
+    second: {fileID: 2100000, guid: a94aef61745f7c647ad65236d926ce86, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corps
+    second: {fileID: 2100000, guid: 77cf308fbd48b724289b29f81514afec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: misc
+    second: {fileID: 2100000, guid: 5d8b2478785dfa14cbd7a34d504a6784, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yeux
+    second: {fileID: 2100000, guid: fda1746f35985f84998c23f4b61f8166, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
