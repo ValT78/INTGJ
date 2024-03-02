@@ -20,9 +20,9 @@ public class ObjetAPorter : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent<PorterObjet>(out var porterObjet))
-        {if (porterObjet.objetPorte==gameObject)
-            porterObjet.Eloignement(porterObjet.objetPorte);
+        {if (porterObjet.objetPorte==gameObject && porterObjet.porter==false)
             porterObjet.objetPorte = null;
+
         }
 
     }
