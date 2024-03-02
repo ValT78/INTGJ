@@ -22,8 +22,6 @@ public class ObjetAPorter : MonoBehaviour
         if (other.TryGetComponent<PorterObjet>(out var porterObjet))
         {if (porterObjet.objetPorte==gameObject && porterObjet.porter==false)
             porterObjet.objetPorte = null;
-
         }
-
     }
 }

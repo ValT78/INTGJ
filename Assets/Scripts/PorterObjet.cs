@@ -5,6 +5,7 @@ using UnityEngine;
 public class PorterObjet : MonoBehaviour
 {
     private int force;
+    [SerializeField] private float agrandissement;
 
     [HideInInspector] public GameObject objetPorte;
     [HideInInspector] public bool porter;
@@ -71,6 +72,7 @@ public class PorterObjet : MonoBehaviour
     public void PlusFort()
     {
         force += 1;
+        this.transform.localScale = this.transform.localScale + Vector3.one*agrandissement;
     }
     public int GetForce()
     {
