@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BoutonCoffre : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    [SerializeField] private OuvrirCoffre ouvrirCoffre; 
+
+    public void BoutonAppuyé()
     {
-        if (collision.gameObject.CompareTag("Crayon")) // il faut créer le tag "Crayon"
-        {
-            Debug.Log("Coffre ouvert");
-        }
+        Debug.Log("Coffre");
+        ouvrirCoffre.coffreDébloqué = true;
     }
 }

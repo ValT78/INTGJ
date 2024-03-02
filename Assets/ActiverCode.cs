@@ -11,5 +11,15 @@ public class ActiverCode : MonoBehaviour
         {
             buttonNum.BoutonAppuyé();
         }
+
+        if (other.TryGetComponent<ResetButton>(out ResetButton resetButton))
+        {
+            resetButton.BoutonAppuyé();
+        }
+
+        if (other.TryGetComponent<BoutonCoffre>(out BoutonCoffre boutonCoffre))
+        {
+            boutonCoffre.BoutonAppuyé();
+        }
     }
 }

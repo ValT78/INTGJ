@@ -13,4 +13,10 @@ public class ResetButton : MonoBehaviour
             codeFrigo.Reset();
         }
     }
+
+    public void BoutonAppuyé()
+    {
+        Debug.Log("Reset");
+        codeFrigo.Reset();
+    }
 }
