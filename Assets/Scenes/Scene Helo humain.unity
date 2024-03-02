@@ -1198,6 +1198,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8857105000480057976, guid: fe7f91112d099ed4e98f94a5977f34e8, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857105000480057976, guid: fe7f91112d099ed4e98f94a5977f34e8, type: 3}
       propertyPath: obstacleDistance
       value: 1
       objectReference: {fileID: 0}
