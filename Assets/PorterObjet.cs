@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class PorterObjet : MonoBehaviour
 {
+    private int force;
+
     [HideInInspector] public GameObject objetPorte;
     private bool porter;
+    
  
     // Start is called before the first frame update
     void Start()
     {
         porter = false;
+        force = 0;
     }
 
     // Update is called once per frame
@@ -29,14 +33,35 @@ public class PorterObjet : MonoBehaviour
                 
                 if (objetPorte != null)
                 {
-                    porter = true;
-                    objetPorte.transform.SetParent(this.transform);
+                    if (objetPorte.GetComponent<ObjetAPorter>().poids <= force)
+                    {
+                        porter = true;
+                        objetPorte.transform.SetParent(this.transform);
+                    }
                 }
             }
+        }
+        if(!porter && objetPorte != null )
+        {
+            if(objetPorte.GetComponent<ObjetAPorter>().poids <= force)
+            {
+                print("portez avec clique gauche");
+            }
+            else { print("vous avez besoin de plus de force"); }
+            
         }
 
       
        
     }
+    public void PlusFort()
+    {
+        force += 1;
+    }
+    public int GetForce()
+    {
+        return (force);
+    }
+    
     
 }
