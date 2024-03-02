@@ -14,19 +14,24 @@ public class TaonMovement : MonoBehaviour
 
     [SerializeField] private Rigidbody rb;
     private Vector3 cameraVelocity = Vector3.zero;
+    private int layerMask;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     void Update()
     {
         
         Rotation();
+        
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            Movement();
+        }
 
-        Movement();
 
         CameraMovement();
     }
@@ -37,19 +42,30 @@ public class TaonMovement : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
-        Vector3 rotationEuler = new(Mathf.Clamp(-mouseY * rotationSpeed, -maxCameraRotationX, maxCameraRotationX), mouseX * rotationSpeed, 0f);
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotationEuler);
+        Vector3 rotationEuler = new(transform.rotation.eulerAngles.x - mouseY * rotationSpeed, transform.rotation.eulerAngles.y + mouseX * rotationSpeed, 0f);
+
+        if (transform.rotation.eulerAngles.x - mouseY * rotationSpeed < 360 - maxCameraRotationX && transform.rotation.eulerAngles.x - mouseY * rotationSpeed>180)
+        {
+            rotationEuler.x = 360 - maxCameraRotationX;
+        }
+        else if (transform.rotation.eulerAngles.x - mouseY * rotationSpeed > maxCameraRotationX && transform.rotation.eulerAngles.x - mouseY * rotationSpeed < 180)
+        {
+            rotationEuler.x = maxCameraRotationX;
+        }
+        
+        transform.rotation = Quaternion.Euler(rotationEuler);
     }
 
-    private void Movement()
+    void Movement()
     {
         // Mouvement de l'objet volant
         Vector3 moveDirection = transform.forward * speed;
-        ;
+
         if (!Physics.Raycast(transform.position, transform.forward, out _, obstacleDistance))
         {
             rb.MovePosition(rb.position + moveDirection * Time.deltaTime);
         }
+        
     }
     private void CameraMovement()
     {
@@ -61,7 +77,7 @@ public class TaonMovement : MonoBehaviour
             // Si un obstacle est détecté, ajuster la position de la caméra
             cameraTargetPosition = cameraHit.point;
         }
-        cameraTargetPosition += Vector3.up * cameraHeight;
+        cameraTargetPosition += transform.up * cameraHeight;
         Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, cameraTargetPosition, ref cameraVelocity, cameraSmoothTime);
 
         Camera.main.transform.LookAt(transform.position);
