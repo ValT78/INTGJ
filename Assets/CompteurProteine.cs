@@ -6,7 +6,7 @@ using UnityEngine;
 public class CompteurProteine : MonoBehaviour
 {
     TextMeshProUGUI textmeshpro;
-    PorterObjet player;
+    private PorterObjet player;
     void Start()
     {
         player=FindObjectOfType<PorterObjet>();

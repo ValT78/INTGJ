@@ -857,6 +857,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 39514903729942820, guid: e28c5244dd481cf469e96dc01b1c6d0d, type: 3}
+      propertyPath: obstacleDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 985980672198406545, guid: e28c5244dd481cf469e96dc01b1c6d0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1395,7 +1399,7 @@ GameObject:
   - component: {fileID: 1727770327}
   - component: {fileID: 1727770330}
   - component: {fileID: 1727770329}
-  - component: {fileID: 1727770328}
+  - component: {fileID: 1727770331}
   m_Layer: 5
   m_Name: "Conteur Prot\xE9ine"
   m_TagString: Untagged
@@ -1422,18 +1426,6 @@ RectTransform:
   m_AnchoredPosition: {x: 45.903, y: 479.836}
   m_SizeDelta: {x: 291.807, y: 46.328}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1727770328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727770326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 317d33aab397d864ca7e3e416df769b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1727770329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1531,6 +1523,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727770326}
   m_CullTransparentMesh: 1
+--- !u!114 &1727770331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727770326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea3b260d57ac3d45af1b6c63bcb3a17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2140332790 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8823636885990876125, guid: e28c5244dd481cf469e96dc01b1c6d0d, type: 3}
