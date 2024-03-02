@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class TaonMovement : MonoBehaviour
 {
-    [SerializeField] private float speed; // Vitesse de déplacement de l'objet volant
+    [SerializeField] private float speed; // Vitesse de dÃ©placement de l'objet volant
     [SerializeField] private float rotationSpeed; // Vitesse de rotation de l'objet volant
-    [SerializeField] private float cameraDistance; // Distance de la caméra derrière l'objet volant
-    [SerializeField] private float cameraSmoothTime; // Temps de lissage du mouvement de la caméra
-    [SerializeField] private float maxCameraRotationX; // Angle maximal de rotation de la caméra autour de l'axe vertical
-    [SerializeField] private float minCameraRotationX; // Angle minimal de rotation de la caméra autour de l'axe vertical
-    [SerializeField] private float cameraHeight; // Angle maximal de rotation de la caméra autour de l'axe horizontal
-    [SerializeField] private float obstacleDistance; // Distance à laquelle un obstacle peut bloquer le mouvement
+    [SerializeField] private float cameraDistance; // Distance de la camÃ©ra derriÃ¨re l'objet volant
+    [SerializeField] private float cameraSmoothTime; // Temps de lissage du mouvement de la camÃ©ra
+    [SerializeField] private float maxCameraRotationX; // Angle maximal de rotation de la camÃ©ra autour de l'axe vertical
+    [SerializeField] private float minCameraRotationX; // Angle minimal de rotation de la camÃ©ra autour de l'axe vertical
+    [SerializeField] private float cameraHeight; // Angle maximal de rotation de la camÃ©ra autour de l'axe horizontal
+    [SerializeField] private float obstacleDistance; // Distance Ã  laquelle un obstacle peut bloquer le mouvement
 
-    [SerializeField] private Collider collider;
 
     /// <summary>
     ///  [SerializeField] private Camera 
@@ -78,12 +77,12 @@ public class TaonMovement : MonoBehaviour
     }
     private void CameraMovement()
     {
-        // Déplacement de la caméra de manière lissée
+        // DÃ©placement de la camÃ©ra de maniÃ¨re lissÃ©e
         Vector3 cameraTargetPosition = transform.position - transform.forward * cameraDistance;
 
-        if (Physics.Raycast(transform.position + 0.01f*transform.forward, -transform.forward, out RaycastHit cameraHit, cameraDistance))
+        if (Physics.Raycast(transform.position, -transform.forward, out RaycastHit cameraHit, cameraDistance*1.1f))
         {
-            // Si un obstacle est détecté, ajuster la position de la caméra
+            // Si un obstacle est dÃ©tectÃ©, ajuster la position de la camÃ©ra
             cameraTargetPosition = cameraHit.point;
             Debug.Log("Collider detected");
         }
