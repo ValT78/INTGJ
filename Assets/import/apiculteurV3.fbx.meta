@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: grille
     second: {fileID: 2100000, guid: a97a10649958d4f49aa49c319c668183, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "v\xEAtements"
+    second: {fileID: 2100000, guid: cfa35169eb2b51c478be4da97562ac41, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
