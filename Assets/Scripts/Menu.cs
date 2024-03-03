@@ -7,6 +7,6 @@ public class Menu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("SceneMaison Helo");
+        SceneManager.LoadScene("Appart");
     }
 }
