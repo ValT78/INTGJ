@@ -5,6 +5,7 @@ using UnityEngine;
 public class Anviil : MonoBehaviour
 {
     [SerializeField] private GameObject key;
+    [SerializeField] private GameObject enclume;
     private SoundManager soundManager;
 
     private void Start()
@@ -19,6 +20,7 @@ public class Anviil : MonoBehaviour
             StartCoroutine(apiculteur.SmoothSquash());
             Instantiate(key, apiculteur.transform.position, Quaternion.identity);
             soundManager.PlaySound(soundManager.anvil);
+            Destroy(enclume);
         }
     }
 }
