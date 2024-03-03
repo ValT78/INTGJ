@@ -7,12 +7,9 @@ public class SoundManager : MonoBehaviour
 {
     [Header("Sources")]
 
-    [SerializeField]
-    private AudioSource musicSource;
-    [SerializeField]
-    private AudioSource effectSource;
-    [SerializeField]
-    private AudioSource effectSourceRepeat;
+    public AudioSource musicSource;
+    public AudioSource effectSource;
+    public AudioSource effectSourceRepeat;
 
 
     [Header("Musics")]
@@ -35,6 +32,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip anvil;
     public AudioClip bee;
     public AudioClip bouton;
+    public AudioClip convAigu;
+    public AudioClip convGrave;
+    public AudioClip convMoyen;
 
     [Header("Audio Mixer")]
 
