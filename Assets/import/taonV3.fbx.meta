@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: corps
-    second: {fileID: 2100000, guid: 77cf308fbd48b724289b29f81514afec, type: 2}
+    second: {fileID: 2100000, guid: 42d1df2d94683c8408ff07b3d1b0f224, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

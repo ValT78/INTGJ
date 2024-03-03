@@ -5,14 +5,20 @@ using UnityEngine;
 public class ButtonNum : MonoBehaviour
 {
     [SerializeField] private CodeFrigo codeFrigo;
-    [SerializeField] private AudioSource audioSource;
     [SerializeField] private int num;
+
+    private SoundManager soundManager;
+
+    private void Start()
+    {
+        soundManager = SoundManager.Instance;
+    }
 
     public void BoutonAppuyé()
     {
         Debug.Log(num);
         codeFrigo.ToucheBouton(num);
-        audioSource.Play();
+        soundManager.PlaySound(soundManager.bouton);
     }
 
 }
