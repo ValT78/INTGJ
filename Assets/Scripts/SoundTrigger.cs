@@ -27,7 +27,8 @@ public class SoundTrigger : MonoBehaviour
         if (!hasPlayed && distanceToPlayer <= triggerDistance && !soundManager.effectSource.isPlaying)
         {
             // Jouer l'effet sonore
-            soundManager.PlaySound(soundEffect);
+            if(soundEffect != null && soundManager != null)
+                soundManager.PlaySound(soundEffect);
             // Marquer que le son a été joué
             hasPlayed = true;
         }
