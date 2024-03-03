@@ -34,11 +34,18 @@ public class PorterObjet : MonoBehaviour
                 if (objetPorte != null)
                 {
                     objetPorte.transform.SetParent(null);
-                    objetPorte.GetComponent<Rigidbody>().useGravity = true;
-                    objetPorte.GetComponent<Rigidbody>().isKinematic = false;
+                    if (objetPorte.TryGetComponent<Rigidbody>(out var rigidbody))
+                    {
+                        rigidbody.useGravity = true;
+                        rigidbody.isKinematic = false;
+                    }
+                    else
+                    {
+                        objetPorte.GetComponent<gravity>().enabled = true;
+                    }
                     objetPorte.layer = LayerMask.NameToLayer("Default");
                     objetPorte.GetComponent<Collider>().enabled = true;
-                    
+
                     objetPorte = null;
 
 
@@ -54,15 +61,22 @@ public class PorterObjet : MonoBehaviour
                     {
                         porter = true;
                         objetPorte.transform.SetParent(this.transform);
-                        objetPorte.GetComponent<Rigidbody>().useGravity = false;
                         objetPorte.layer = LayerMask.NameToLayer("Ignore Raycast");
                         objetPorte.GetComponent<Collider>().enabled = false;
-                        objetPorte.GetComponent<Rigidbody>().isKinematic = true;
+                        if (objetPorte.TryGetComponent<Rigidbody>(out var rigidbody))
+                        {
+                            rigidbody.useGravity = false;
+                            rigidbody.isKinematic = true;
+                        }
+                        else
+                        {
+                            objetPorte.GetComponent<gravity>().enabled = false;
+                        }
                     }
                 }
             }
+
         }
-        
     }
        
     
