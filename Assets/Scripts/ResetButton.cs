@@ -5,12 +5,19 @@ using UnityEngine;
 public class ResetButton : MonoBehaviour
 {
     [SerializeField] private CodeFrigo codeFrigo;
-    [SerializeField] private AudioSource audioSource;
+
+    private SoundManager soundManager;
+
+    private void Start()
+    {
+        soundManager = SoundManager.Instance;
+    }
 
     public void BoutonAppuyé()
     {
-        audioSource.Play();
         Debug.Log("Reset");
         codeFrigo.Reset();
+        soundManager.PlaySound(soundManager.bouton);
+
     }
 }
