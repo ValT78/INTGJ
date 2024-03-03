@@ -20,6 +20,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip bzz4;
     public AudioClip bzz5;
 
+    public AudioClip musicDebut;
+
     [Header("Sound effects")]
 
     public AudioClip depression;
@@ -35,6 +37,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip convAigu;
     public AudioClip convGrave;
     public AudioClip convMoyen;
+
 
     [Header("Audio Mixer")]
 
