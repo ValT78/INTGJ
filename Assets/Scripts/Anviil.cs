@@ -17,8 +17,9 @@ public class Anviil : MonoBehaviour
     {
         if (collider.gameObject.TryGetComponent(out Apiculteur apiculteur))
         {
+            
             StartCoroutine(apiculteur.SmoothSquash());
-            Instantiate(key, apiculteur.transform.position, Quaternion.identity);
+            Instantiate(key, new Vector3(10.74f, 6.77f, 24.29f), Quaternion.identity);
             soundManager.PlaySound(soundManager.anvil);
             StartCoroutine(Destruction());
         }
