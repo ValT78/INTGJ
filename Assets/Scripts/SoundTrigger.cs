@@ -10,10 +10,30 @@ public class SoundTrigger : MonoBehaviour
     private SoundManager soundManager; // Référence au SoundManager
     private bool hasPlayed = false; // Variable pour s'assurer que le son ne se joue qu'une fois
 
+    [SerializeField] private GameObject UISting;
+
     private void Start()
     {
         player = FindObjectOfType<TaonMovement>().transform; // Trouver le transform du joueur
         soundManager = FindObjectOfType<SoundManager>();
+
+        foreach (UIMove ui in FindObjectsOfType<UIMove>())
+        {
+            if (ui.id == 3)
+            {
+                ui.gameObject.SetActive(false);
+            }
+        }
+    }
+    private void Awake()
+    {
+        foreach (UIMove ui in FindObjectsOfType<UIMove>())
+        {
+            if (ui.id == 3)
+            {
+                UISting = ui.gameObject;
+            }
+        }
     }
 
     void Update()
@@ -33,6 +53,10 @@ public class SoundTrigger : MonoBehaviour
                 soundManager.PlaySound(soundEffect);
                 
             }
+            if(UISting != null)
+            {
+                UISting.SetActive(true);
+            }   
             // Marquer que le son a été joué
             hasPlayed = true;
         }

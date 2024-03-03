@@ -8,10 +8,11 @@ public class UIMove : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float killHeight;
     [SerializeField] private RectTransform ui;
+    public int id;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        
+        ui.position = new Vector3(ui.position.x, 253f, ui.position.z);
     }
 
     // Update is called once per frame
@@ -20,7 +21,7 @@ public class UIMove : MonoBehaviour
         ui.position += new Vector3(0, moveSpeed * Time.deltaTime, 0);
         if(ui.position.y > killHeight)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
