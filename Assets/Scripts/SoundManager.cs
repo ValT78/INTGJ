@@ -34,6 +34,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip chest;
     public AudioClip anvil;
     public AudioClip bee;
+    public AudioClip bouton;
 
     [Header("Audio Mixer")]
 
