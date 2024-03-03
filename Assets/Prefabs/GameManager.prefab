@@ -55,6 +55,7 @@ MonoBehaviour:
   bzz3: {fileID: 8300000, guid: 0cbc941c3e3f7904383ef9dc95bddd38, type: 3}
   bzz4: {fileID: 8300000, guid: d8a0a6a99e14adc48be3826fbba7f740, type: 3}
   bzz5: {fileID: 8300000, guid: 38b3df04b5f02114293d1afb8c13d0ec, type: 3}
+  musicDebut: {fileID: 0}
   depression: {fileID: 8300000, guid: 0a4d2005593c0d042a54e07a6d4f817c, type: 3}
   morse: {fileID: 8300000, guid: c0dd45902cd95dd4983b784acab0096b, type: 3}
   openDoor: {fileID: 8300000, guid: cec140e85b9638b4b83b7e2e013d39a4, type: 3}
@@ -65,6 +66,9 @@ MonoBehaviour:
   anvil: {fileID: 8300000, guid: f8630c05b4bedab40b59952cf1234e1a, type: 3}
   bee: {fileID: 8300000, guid: 7b1ab3935e326ca41818eb0a40cbbdce, type: 3}
   bouton: {fileID: 8300000, guid: 3bd557033fa87b149a4aeb0112daf5b8, type: 3}
+  convAigu: {fileID: 8300000, guid: 866be6131ae2b7a469df8a0cc55a2312, type: 3}
+  convGrave: {fileID: 8300000, guid: 788399fc65288274c9e4cd396a764a26, type: 3}
+  convMoyen: {fileID: 8300000, guid: eed51185f2fe27b4da1698df7389432e, type: 3}
   mixer: {fileID: 24100000, guid: 1057fa08f2bd3fd4e8fbf9c5d219d2f6, type: 2}
   nextLoop: {fileID: 0}
 --- !u!82 &2592677178024538183
