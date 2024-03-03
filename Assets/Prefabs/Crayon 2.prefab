@@ -2043,6 +2043,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poids: 1
+  texture: {fileID: 1858469576222902670}
+  intensite: 1
 --- !u!1 &4241511079708623714
 GameObject:
   m_ObjectHideFlags: 0
