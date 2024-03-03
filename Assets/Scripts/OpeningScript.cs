@@ -19,6 +19,8 @@ public class OpeningScript : MonoBehaviour
 
     public float talking_time = 0.1f;
 
+    private bool has_launched = false;
+
     void Start()
     {
         soundManager = SoundManager.Instance;
@@ -40,6 +42,15 @@ public class OpeningScript : MonoBehaviour
         }
         else
         {
+            if (!has_launched)
+            {
+
+                soundManager.musicSource.Stop();
+                soundManager.PlayMusic(soundManager.musicCliffHanger);
+                // light.color = Color.red;
+
+            }
+            has_launched = true;
             apiculteur.SetActive(true);
             if (apiculteur.transform.position.y < 0.65f)
             {
@@ -55,6 +66,8 @@ public class OpeningScript : MonoBehaviour
         if (time_count > 3f)
         {
             SceneManager.LoadScene("Appart");
+            soundManager.musicSource.Stop();
+            soundManager.effectSource.Stop();
         }
 
     }

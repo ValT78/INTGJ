@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundTrigger : MonoBehaviour
 {
-    public Transform player; // Référence au transform du joueur
+    private Transform player; // Référence au transform du joueur
     public float triggerDistance; // Distance à partir de laquelle le son doit être déclenché
     public AudioClip soundEffect; // Effet sonore à jouer
     private SoundManager soundManager; // Référence au SoundManager
@@ -27,14 +27,15 @@ public class SoundTrigger : MonoBehaviour
         if (!hasPlayed && distanceToPlayer <= triggerDistance && !soundManager.effectSource.isPlaying)
         {
             // Jouer l'effet sonore
-            soundManager.PlaySound(soundEffect);
+            if(soundEffect != null && soundManager != null)
+                soundManager.PlaySound(soundEffect);
             // Marquer que le son a été joué
             hasPlayed = true;
         }
-        /*// Si le joueur est en dehors de la distance de déclenchement, réinitialiser la variable hasPlayed
+        // Si le joueur est en dehors de la distance de déclenchement, réinitialiser la variable hasPlayed
         else if (distanceToPlayer > triggerDistance)
         {
             hasPlayed = false;
-        }*/
+        }
     }
 }

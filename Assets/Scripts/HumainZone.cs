@@ -22,5 +22,6 @@ public class HumainZone : MonoBehaviour
     {
         print("zone piqué");
         Instantiate(proteine, this.transform.position+offset, Quaternion.identity);
+        Destroy(this.gameObject);
     }
 }

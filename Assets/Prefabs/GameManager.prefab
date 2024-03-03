@@ -55,7 +55,8 @@ MonoBehaviour:
   bzz3: {fileID: 8300000, guid: 0cbc941c3e3f7904383ef9dc95bddd38, type: 3}
   bzz4: {fileID: 8300000, guid: d8a0a6a99e14adc48be3826fbba7f740, type: 3}
   bzz5: {fileID: 8300000, guid: 38b3df04b5f02114293d1afb8c13d0ec, type: 3}
-  musicDebut: {fileID: 0}
+  musicDebut: {fileID: 8300000, guid: c1d8afb6f34144847b2b7deab4dfdc4d, type: 3}
+  musicCliffHanger: {fileID: 8300000, guid: 399b32987b4da214397802d2f95197e6, type: 3}
   depression: {fileID: 8300000, guid: 0a4d2005593c0d042a54e07a6d4f817c, type: 3}
   morse: {fileID: 8300000, guid: c0dd45902cd95dd4983b784acab0096b, type: 3}
   openDoor: {fileID: 8300000, guid: cec140e85b9638b4b83b7e2e013d39a4, type: 3}
@@ -91,10 +92,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 187.58
+  MinDistance: 0
+  MaxDistance: 5.17
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -188,9 +189,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -284,9 +285,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
