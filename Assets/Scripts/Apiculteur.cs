@@ -7,6 +7,8 @@ public class Apiculteur : MonoBehaviour
     [SerializeField] private GameObject apiculteur;
     [SerializeField] private float squashTime;
     [SerializeField] private float endScale;
+
+    [SerializeField] Animator animator;
     private float startScale;
 
     private void Start()
@@ -15,6 +17,7 @@ public class Apiculteur : MonoBehaviour
     }
     public IEnumerator SmoothSquash()
     {
+        animator.SetTrigger("Mort");
         float t = 0;
         while (t < squashTime)
         {

@@ -7,6 +7,7 @@ public class Anviil : MonoBehaviour
     [SerializeField] private GameObject key;
     [SerializeField] private GameObject enclume;
     private SoundManager soundManager;
+    [SerializeField] GameObject spawnclef;
 
     private void Start()
     {

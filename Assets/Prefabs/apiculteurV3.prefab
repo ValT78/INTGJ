@@ -224,3 +224,4 @@ MonoBehaviour:
   apiculteur: {fileID: 5119521797470338751}
   squashTime: 0.5
   endScale: 1.5
+  animator: {fileID: 5641385373518171521}
