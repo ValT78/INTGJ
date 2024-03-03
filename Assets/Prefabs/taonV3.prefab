@@ -118,6 +118,7 @@ MonoBehaviour:
   cameraDistance: 8
   cameraSmoothTime: 0.5
   maxCameraRotationX: 60
+  minCameraRotationX: 0
   cameraHeight: 4
   obstacleDistance: 1
   rb: {fileID: 978800198601571747}
@@ -147,7 +148,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &1399724570255989483
 MonoBehaviour:
   m_ObjectHideFlags: 0
