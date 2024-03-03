@@ -20,7 +20,13 @@ public class Anviil : MonoBehaviour
             StartCoroutine(apiculteur.SmoothSquash());
             Instantiate(key, apiculteur.transform.position, Quaternion.identity);
             soundManager.PlaySound(soundManager.anvil);
-            Destroy(enclume);
+            StartCoroutine(Destruction());
         }
+    }
+
+    IEnumerator Destruction()
+    {
+        yield return new WaitForSeconds(1.0f);
+        Destroy(enclume);
     }
 }
