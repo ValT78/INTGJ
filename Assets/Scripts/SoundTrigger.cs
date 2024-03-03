@@ -17,21 +17,16 @@ public class SoundTrigger : MonoBehaviour
         player = FindObjectOfType<TaonMovement>().transform; // Trouver le transform du joueur
         soundManager = FindObjectOfType<SoundManager>();
 
-        foreach (UIMove ui in FindObjectsOfType<UIMove>())
+        if (soundManager && soundEffect == soundManager.dialToilette)
         {
-            if (ui.id == 3)
+            foreach (UIMove ui in FindObjectsOfType<UIMove>())
             {
-                ui.gameObject.SetActive(false);
-            }
-        }
-    }
-    private void Awake()
-    {
-        foreach (UIMove ui in FindObjectsOfType<UIMove>())
-        {
-            if (ui.id == 3)
-            {
-                UISting = ui.gameObject;
+                if (ui.id == 3)
+                {
+                    UISting = ui.gameObject;
+
+                    ui.gameObject.SetActive(false);
+                }
             }
         }
     }
