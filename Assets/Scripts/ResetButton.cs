@@ -5,12 +5,12 @@ using UnityEngine;
 public class ResetButton : MonoBehaviour
 {
     [SerializeField] private CodeFrigo codeFrigo;
+    [SerializeField] private AudioSource audioSource;
 
-    private void OnCollisionEnter(Collision collision)
+    public void BoutonAppuyé()
     {
-        if (collision.gameObject.CompareTag("Crayon")) // il faut créer le tag "Crayon"
-        {
-            codeFrigo.Reset();
-        }
+        audioSource.Play();
+        Debug.Log("Reset");
+        codeFrigo.Reset();
     }
 }
