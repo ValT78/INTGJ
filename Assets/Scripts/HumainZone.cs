@@ -7,10 +7,11 @@ public class HumainZone : MonoBehaviour
     [SerializeField] private GameObject proteine;
     [SerializeField] private Vector3 offset;
 
-    // Start is called before the first frame update
+    private SoundManager soundManager;
+
     void Start()
     {
-        
+        soundManager = SoundManager.Instance;
     }
 
     // Update is called once per frame
@@ -20,6 +21,7 @@ public class HumainZone : MonoBehaviour
     }
     public void pique()
     {
+        soundManager.PlaySound(soundManager.piqure);
         print("zone piqué");
         Instantiate(proteine, this.transform.position+offset, Quaternion.identity);
         Destroy(this.gameObject);
