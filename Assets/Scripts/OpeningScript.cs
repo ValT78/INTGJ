@@ -13,7 +13,6 @@ public class OpeningScript : MonoBehaviour
     [SerializeField] private GameObject apiculteur;
 
     private SoundManager soundManager;
-    public Light light;
 
     private float time_count = 0;
     private float another_time_count = 0;
@@ -48,7 +47,7 @@ public class OpeningScript : MonoBehaviour
 
                 soundManager.musicSource.Stop();
                 soundManager.PlayMusic(soundManager.musicCliffHanger);
-                light.color = Color.red;
+                // light.color = Color.red;
 
             }
             has_launched = true;
@@ -67,6 +66,8 @@ public class OpeningScript : MonoBehaviour
         if (time_count > 3f)
         {
             SceneManager.LoadScene("Appart");
+            soundManager.musicSource.Stop();
+            soundManager.effectSource.Stop();
         }
 
     }
