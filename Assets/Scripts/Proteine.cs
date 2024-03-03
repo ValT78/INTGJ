@@ -26,7 +26,10 @@ public class Proteine : MonoBehaviour
         if(other.TryGetComponent<PorterObjet>(out var player))
         {
             player.PlusFort();
-            soundManager.PlaySound(soundManager.depression);
+            if(soundManager != null)
+            {
+                soundManager.PlaySound(soundManager.depression);
+            }
             Destroy(this.gameObject);
         }
     }

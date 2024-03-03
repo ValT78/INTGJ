@@ -14,6 +14,7 @@ public class PorterObjet : MonoBehaviour
 
     [SerializeField] private GameObject noWheyUI;
     [SerializeField] private GameObject howPorter;
+    [SerializeField] private GameObject betterUI;
 
     // Start is called before the first frame update
     void Start()
@@ -95,6 +96,7 @@ public class PorterObjet : MonoBehaviour
                 soundManager.nextLoop = soundManager.bzz5;
         }
         this.transform.localScale = this.transform.localScale + Vector3.one*agrandissement;
+        Instantiate(betterUI);
     }
     public int GetForce()
     {
