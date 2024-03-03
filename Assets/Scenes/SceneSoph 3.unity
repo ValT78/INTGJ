@@ -279,6 +279,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 465001687}
+    - target: {fileID: 9220729919373896333, guid: 38450c9fc24a33748bf840ca998ece86, type: 3}
+      propertyPath: outline
+      value: 
+      objectReference: {fileID: 1690075579}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1525,6 +1529,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 899243246}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1690075579 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7942586525597030671, guid: 38450c9fc24a33748bf840ca998ece86, type: 3}
+  m_PrefabInstance: {fileID: 190076322}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1694492164
 PrefabInstance:
   m_ObjectHideFlags: 0

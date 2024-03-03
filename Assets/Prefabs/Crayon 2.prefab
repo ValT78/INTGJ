@@ -2028,8 +2028,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.08517073, y: 0.40987924, z: 0.03128234}
-  m_Center: {x: 0.016610574, y: 0.023561053, z: -0.010969183}
+  m_Size: {x: 0.08517073, y: 0.40987924, z: 0.05541851}
+  m_Center: {x: 0.016610574, y: 0.023561047, z: -0.010780398}
 --- !u!114 &9220729919373896333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2043,10 +2043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poids: 1
-
   outline: {fileID: 7942586525597030671}
-
-
 --- !u!1 &4241511079708623714
 GameObject:
   m_ObjectHideFlags: 0
