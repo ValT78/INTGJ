@@ -13,11 +13,14 @@ public class OpeningScript : MonoBehaviour
     [SerializeField] private GameObject apiculteur;
 
     private SoundManager soundManager;
+    public Light light;
 
     private float time_count = 0;
     private float another_time_count = 0;
 
     public float talking_time = 0.1f;
+
+    private bool has_launched = false;
 
     void Start()
     {
@@ -40,6 +43,15 @@ public class OpeningScript : MonoBehaviour
         }
         else
         {
+            if (!has_launched)
+            {
+
+                soundManager.musicSource.Stop();
+                soundManager.PlayMusic(soundManager.musicCliffHanger);
+                light.color = Color.red;
+
+            }
+            has_launched = true;
             apiculteur.SetActive(true);
             if (apiculteur.transform.position.y < 0.65f)
             {
