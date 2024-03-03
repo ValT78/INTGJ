@@ -9,13 +9,13 @@ public class OuvertureObjet : MonoBehaviour
     [SerializeField] private int targetAngle = 90;
     
     private float totalAngleRotated = 0;
-    [SerializeField] public bool frigoDébloqué = false; 
+    public bool frigoDebloque = false; 
 
 
 
     void Update()
     {
-        if (totalAngleRotated < targetAngle && frigoDébloqué)
+        if (totalAngleRotated < targetAngle && frigoDebloque)
         {
             transform.RotateAround(transform.position, rotationAxis, rotationSpeed * Time.deltaTime);
             totalAngleRotated += Time.deltaTime * rotationSpeed;

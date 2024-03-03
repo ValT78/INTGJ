@@ -27,7 +27,7 @@ public class CodeFrigo : MonoBehaviour
 
         if (CodeCorrect())
         {
-            ouvertureObjet.frigoDébloqué = true;
+            ouvertureObjet.frigoDebloque = true;
             soundManager.PlaySound(soundManager.openDoor);
 
             textMeshProUGUI.color = Color.green;
