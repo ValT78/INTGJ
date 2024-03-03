@@ -8998,10 +8998,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6009561947486246039, guid: 1af95c36a5ea7db49aad225789d09cbe, type: 3}
-      propertyPath: musicDebut
-      value: 
-      objectReference: {fileID: 8300000, guid: c1d8afb6f34144847b2b7deab4dfdc4d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9440,7 +9436,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5874437804364555010, guid: 6a650741eadc6004fac2fffa6307f151, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3063810241110065544, guid: 6a650741eadc6004fac2fffa6307f151, type: 3}
@@ -14460,7 +14457,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MamanTaon  Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5572743304483997909, guid: 91deba4007d4a1b4d93b35cfc76b463c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3914958089595595359, guid: 91deba4007d4a1b4d93b35cfc76b463c, type: 3}
