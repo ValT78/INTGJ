@@ -107,8 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70776b0f0bbdd8b4881a92aed26f99a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDistance: 30
-  soundEffect: {fileID: 0}
+  triggerDistance: 5
+  soundEffect: {fileID: 8300000, guid: 15718f12fb6b7c44fb558b8a30d1d4d3, type: 3}
 --- !u!1 &5119521797470338751 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c840f736ae9001b458638fb38287a7fd, type: 3}
