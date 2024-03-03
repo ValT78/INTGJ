@@ -5,6 +5,12 @@ using UnityEngine;
 public class Anviil : MonoBehaviour
 {
     [SerializeField] private GameObject key;
+    private SoundManager soundManager;
+
+    private void Start()
+    {
+        soundManager = FindObjectOfType<SoundManager>();
+    }
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -12,7 +18,7 @@ public class Anviil : MonoBehaviour
         {
             StartCoroutine(apiculteur.SmoothSquash());
             Instantiate(key, apiculteur.transform.position, Quaternion.identity);
-
+            soundManager.PlaySound(soundManager.anvil);
         }
     }
 }
