@@ -104,8 +104,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70776b0f0bbdd8b4881a92aed26f99a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDistance: 5
+  triggerDistance: 7
+  uiDistance: 0
   soundEffect: {fileID: 8300000, guid: c0dd45902cd95dd4983b784acab0096b, type: 3}
+  UISting: {fileID: 0}
 --- !u!4 &3063810241110065544 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fe4f8dbfe86ce594f8c1861dc30f1d63, type: 3}

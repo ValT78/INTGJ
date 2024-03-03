@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70776b0f0bbdd8b4881a92aed26f99a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDistance: 8
+  triggerDistance: 30
+  uiDistance: 8
   soundEffect: {fileID: 8300000, guid: f13c877876df6984aa19da80f9c6a733, type: 3}
+  UISting: {fileID: 0}
 --- !u!1001 &3389333388424931919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -188,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proteine: {fileID: 4132206532518066342, guid: 8136a10e5dd42de45a03b6c0822c4bef, type: 3}
-  offset: {x: 0, y: 10, z: 0}
+  offset: {x: 0, y: 20, z: 0}
   animator: {fileID: 601392945372590588}
   anima: 0
 --- !u!4 &2919438388543950244 stripped
