@@ -152,6 +152,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1399724570255989483, guid: fe7f91112d099ed4e98f94a5977f34e8, type: 3}
+      propertyPath: betterUI
+      value: 
+      objectReference: {fileID: 5474868777338155673, guid: f76934c55dc25a142a297d122cb4264c, type: 3}
     - target: {fileID: 1438701464257151299, guid: fe7f91112d099ed4e98f94a5977f34e8, type: 3}
       propertyPath: m_Name
       value: taonV4

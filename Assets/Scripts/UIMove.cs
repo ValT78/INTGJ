@@ -18,7 +18,6 @@ public class UIMove : MonoBehaviour
     void Update()
     {
         ui.position += new Vector3(0, moveSpeed * Time.deltaTime, 0);
-        print(ui.position.y);
         if(ui.position.y > killHeight)
         {
             Destroy(gameObject);
