@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OpeningScript : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class OpeningScript : MonoBehaviour
     [SerializeField] private GameObject apiculteur;
 
     private SoundManager soundManager;
+
+    private float time_count = 0;
 
     void Start()
     {
@@ -27,10 +30,26 @@ public class OpeningScript : MonoBehaviour
             taon.position += speed * Time.fixedDeltaTime;
             taonMaman.position += speed * Time.fixedDeltaTime;
             taonPapa.position += speed * Time.fixedDeltaTime;
+
+            soundManager.PlaySound(soundManager.convAigu);
         }
         else
         {
             apiculteur.SetActive(true);
+            if (apiculteur.transform.position.y < 0.65f)
+            {
+                apiculteur.transform.position += new Vector3(0, 1f, 0) * Time.fixedDeltaTime;
+            }
+            else
+            {
+                time_count += Time.fixedDeltaTime;
+            }
+
+        }
+
+        if (time_count > 3f)
+        {
+            SceneManager.LoadScene("Appart");
         }
 
     }
