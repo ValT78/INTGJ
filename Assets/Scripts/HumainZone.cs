@@ -6,6 +6,7 @@ public class HumainZone : MonoBehaviour
 {
     [SerializeField] private GameObject proteine;
     [SerializeField] private Vector3 offset;
+    [SerializeField] private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,14 @@ public class HumainZone : MonoBehaviour
     public void pique()
     {
         print("zone piqué");
-        Instantiate(proteine, this.transform.position+offset, Quaternion.identity);
+        StartCoroutine(Explosion());
+        animator.SetTrigger("Mort");
+
+    }
+    private IEnumerator Explosion()
+    {
+        yield return new WaitForSeconds(2);
+        Instantiate(proteine, this.transform.position + offset, Quaternion.identity);
         Destroy(this.gameObject);
     }
 }
