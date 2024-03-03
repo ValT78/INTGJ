@@ -44,7 +44,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -62,18 +62,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.003|Armature.003|mixamo.com|Layer0.002
-      takeName: Armature.003|Armature.003|mixamo.com|Layer0.002
+      name: Armature.003|Armature.003|mixamo.com|Layer0
+      takeName: Armature.003|Armature.003|mixamo.com|Layer0
       internalID: 2917043578413195442
       firstFrame: 0
-      lastFrame: 158
+      lastFrame: 277
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

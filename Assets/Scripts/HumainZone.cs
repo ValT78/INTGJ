@@ -8,16 +8,15 @@ public class HumainZone : MonoBehaviour
     [SerializeField] private Vector3 offset;
     [SerializeField] private Animator animator;
 
+    public bool anima;
+
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        StartCoroutine(anim());
+        anima = false;
     }
     public void pique()
     {
@@ -28,8 +27,16 @@ public class HumainZone : MonoBehaviour
     }
     private IEnumerator Explosion()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2.38f);
         Instantiate(proteine, this.transform.position + offset, Quaternion.identity);
         Destroy(this.gameObject);
+    }
+
+    private IEnumerator anim()
+    {
+        yield return new WaitForSeconds(4);
+        anima = !anima;
+        animator.SetBool("anima",anima);
+        StartCoroutine(anim());
     }
 }
