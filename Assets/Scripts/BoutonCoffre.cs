@@ -5,12 +5,16 @@ using UnityEngine;
 public class BoutonCoffre : MonoBehaviour
 {
     [SerializeField] private OuvrirCoffre ouvrirCoffre;
-    [SerializeField] private AudioSource audioSource;
+    private SoundManager soundManager;
 
+    private void Start()
+    {
+        soundManager = SoundManager.Instance;
+    }
     public void BoutonAppuyé()
     {
         Debug.Log("Coffre");
         ouvrirCoffre.coffreDébloqué = true;
-        audioSource.Play();
+        soundManager.PlaySound(soundManager.chest);
     }
 }
