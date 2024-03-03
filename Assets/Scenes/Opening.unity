@@ -8999,18 +8999,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6009561947486246039, guid: 1af95c36a5ea7db49aad225789d09cbe, type: 3}
-      propertyPath: convAigu
-      value: 
-      objectReference: {fileID: 8300000, guid: 866be6131ae2b7a469df8a0cc55a2312, type: 3}
-    - target: {fileID: 6009561947486246039, guid: 1af95c36a5ea7db49aad225789d09cbe, type: 3}
-      propertyPath: convGrave
-      value: 
-      objectReference: {fileID: 8300000, guid: 788399fc65288274c9e4cd396a764a26, type: 3}
-    - target: {fileID: 6009561947486246039, guid: 1af95c36a5ea7db49aad225789d09cbe, type: 3}
-      propertyPath: convMoyen
-      value: 
-      objectReference: {fileID: 8300000, guid: eed51185f2fe27b4da1698df7389432e, type: 3}
-    - target: {fileID: 6009561947486246039, guid: 1af95c36a5ea7db49aad225789d09cbe, type: 3}
       propertyPath: musicDebut
       value: 
       objectReference: {fileID: 8300000, guid: c1d8afb6f34144847b2b7deab4dfdc4d, type: 3}
