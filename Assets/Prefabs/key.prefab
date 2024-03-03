@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poids: 0
+  outline: {fileID: 4009698542759952183}
 --- !u!65 &5363589892181092429
 BoxCollider:
   m_ObjectHideFlags: 0

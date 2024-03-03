@@ -15,10 +15,16 @@ public class OpeningScript : MonoBehaviour
     private SoundManager soundManager;
 
     private float time_count = 0;
+    private float another_time_count = 0;
+
+    public float talking_time = 0.1f;
 
     void Start()
     {
         soundManager = SoundManager.Instance;
+        soundManager.musicSource.Stop();
+        soundManager.PlayMusic(soundManager.musicDebut);
+
     }
 
 
@@ -31,7 +37,6 @@ public class OpeningScript : MonoBehaviour
             taonMaman.position += speed * Time.fixedDeltaTime;
             taonPapa.position += speed * Time.fixedDeltaTime;
 
-            soundManager.PlaySound(soundManager.convAigu);
         }
         else
         {
