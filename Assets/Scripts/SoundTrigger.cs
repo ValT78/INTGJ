@@ -24,11 +24,15 @@ public class SoundTrigger : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         // Si le joueur est à une distance inférieure ou égale à la distance de déclenchement et que le son n'a pas encore été joué
-        if (!hasPlayed && distanceToPlayer <= triggerDistance && !soundManager.effectSource.isPlaying)
+        if (!hasPlayed && distanceToPlayer <= triggerDistance && soundManager && !soundManager.effectSource.isPlaying)
         {
             // Jouer l'effet sonore
-            if(soundEffect != null && soundManager != null)
+            if(soundEffect != null)
+            {
+                soundManager.StopMusic();
                 soundManager.PlaySound(soundEffect);
+                
+            }
             // Marquer que le son a été joué
             hasPlayed = true;
         }

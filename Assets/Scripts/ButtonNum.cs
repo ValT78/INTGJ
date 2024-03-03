@@ -18,7 +18,8 @@ public class ButtonNum : MonoBehaviour
     {
         Debug.Log(num);
         codeFrigo.ToucheBouton(num);
-        soundManager.PlaySound(soundManager.bouton);
+        if(soundManager != null)
+            soundManager.PlaySound(soundManager.bouton);
     }
 
 }
