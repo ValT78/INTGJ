@@ -22,6 +22,24 @@ public class PorterObjet : MonoBehaviour
         porter = false;
         force = 0;
         soundManager = SoundManager.Instance;
+        foreach(UIMove ui in FindObjectsOfType<UIMove>())
+        {
+            if(ui.id == 0)
+            {
+                noWheyUI = ui.gameObject;
+                ui.gameObject.SetActive(false);
+            }
+            else if(ui.id == 1)
+            {
+                howPorter = ui.gameObject;
+                ui.gameObject.SetActive(false);
+            }
+            else if(ui.id == 2)
+            {
+                betterUI = ui.gameObject;
+                ui.gameObject.SetActive(false);
+            }   
+        }
     }
 
     // Update is called once per frame
@@ -96,7 +114,7 @@ public class PorterObjet : MonoBehaviour
                 soundManager.nextLoop = soundManager.bzz5;
         }
         this.transform.localScale = this.transform.localScale + Vector3.one*agrandissement;
-        Instantiate(betterUI);
+        betterUI.SetActive(true);
     }
     public int GetForce()
     {
@@ -105,8 +123,8 @@ public class PorterObjet : MonoBehaviour
     
     public void ShowUI(int poids)
     {
-        if(poids <= force) Instantiate(howPorter);
-        else Instantiate(noWheyUI);
+        if(poids <= force) howPorter.SetActive(true);
+        else noWheyUI.SetActive(true);
     }
 
 }
