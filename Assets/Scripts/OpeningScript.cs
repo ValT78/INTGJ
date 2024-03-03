@@ -15,6 +15,9 @@ public class OpeningScript : MonoBehaviour
     private SoundManager soundManager;
 
     private float time_count = 0;
+    private float another_time_count = 0;
+
+    public float talking_time = 0.1f;
 
     void Start()
     {
@@ -31,7 +34,17 @@ public class OpeningScript : MonoBehaviour
             taonMaman.position += speed * Time.fixedDeltaTime;
             taonPapa.position += speed * Time.fixedDeltaTime;
 
-            soundManager.PlaySound(soundManager.convAigu);
+            if (soundManager.effectSource.isPlaying)
+            {
+                another_time_count += Time.fixedDeltaTime;
+            }
+            if (another_time_count > talking_time || !soundManager.effectSource.isPlaying)
+            {
+                soundManager.effectSource.PlayOneShot(soundManager.convAigu);
+                soundManager.effectSourceRepeat.PlayOneShot(soundManager.convGrave);
+                another_time_count = 0;
+            }
+
         }
         else
         {
