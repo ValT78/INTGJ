@@ -2043,6 +2043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poids: 1
+  outline: {fileID: 7942586525597030671}
 --- !u!1 &4241511079708623714
 GameObject:
   m_ObjectHideFlags: 0
@@ -4052,6 +4053,7 @@ GameObject:
   - component: {fileID: 7245400833686430076}
   - component: {fileID: 108179487363052238}
   - component: {fileID: 3378134440389424833}
+  - component: {fileID: 7942586525597030671}
   m_Layer: 0
   m_Name: Crayon 2
   m_TagString: Untagged
@@ -4150,3 +4152,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.022344535, y: 0.32201874, z: 0.019674022}
   m_Center: {x: 0.019730918, y: 0.035730686, z: 0.03029039}
+--- !u!114 &7942586525597030671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608498110179666327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
