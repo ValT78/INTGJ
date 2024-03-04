@@ -27,7 +27,7 @@ public class HumainZone : MonoBehaviour
     }
     private IEnumerator Explosion()
     {
-        yield return new WaitForSeconds(2.6f);
+        yield return new WaitForSeconds(2.8f);
         Instantiate(proteine, this.transform.position + offset, Quaternion.identity);
         Destroy(this.gameObject);
     }
