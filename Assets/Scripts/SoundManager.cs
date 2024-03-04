@@ -190,7 +190,7 @@ public class SoundManager : MonoBehaviour
     {
         if (nextLoop != null)
         {
-            while(effectSource.isPlaying && effectSource.clip == morse) { 
+            while(effectSource.isPlaying) { 
                 yield return null;
             }
             musicSource.clip = nextLoop;

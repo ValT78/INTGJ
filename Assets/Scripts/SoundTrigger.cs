@@ -5,8 +5,9 @@ using UnityEngine;
 public class SoundTrigger : MonoBehaviour
 {
     private Transform player; // Référence au transform du joueur
-    public float triggerDistance; // Distance à partir de laquelle le son doit être déclenché
-    public AudioClip soundEffect; // Effet sonore à jouer
+    [SerializeField] private float triggerDistance; // Distance à partir de laquelle le son doit être déclenché
+    [SerializeField] private float uiDistance; // Distance à partir de laquelle le son doit être déclenché
+    [SerializeField] private AudioClip soundEffect; // Effet sonore à jouer
     private SoundManager soundManager; // Référence au SoundManager
     private bool hasPlayed = false; // Variable pour s'assurer que le son ne se joue qu'une fois
 
@@ -17,21 +18,16 @@ public class SoundTrigger : MonoBehaviour
         player = FindObjectOfType<TaonMovement>().transform; // Trouver le transform du joueur
         soundManager = FindObjectOfType<SoundManager>();
 
-        foreach (UIMove ui in FindObjectsOfType<UIMove>())
+        if (soundManager && soundEffect == soundManager.dialToilette)
         {
-            if (ui.id == 3)
+            foreach (UIMove ui in FindObjectsOfType<UIMove>())
             {
-                ui.gameObject.SetActive(false);
-            }
-        }
-    }
-    private void Awake()
-    {
-        foreach (UIMove ui in FindObjectsOfType<UIMove>())
-        {
-            if (ui.id == 3)
-            {
-                UISting = ui.gameObject;
+                if (ui.id == 3)
+                {
+                    UISting = ui.gameObject;
+
+                    ui.gameObject.SetActive(false);
+                }
             }
         }
     }
@@ -53,7 +49,7 @@ public class SoundTrigger : MonoBehaviour
                 soundManager.PlaySound(soundEffect);
                 
             }
-            if(UISting != null)
+            if(UISting != null && distanceToPlayer < uiDistance)
             {
                 UISting.SetActive(true);
             }   
