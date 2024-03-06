@@ -33,7 +33,7 @@ public class TaonMovement : MonoBehaviour
         
         Rotation();
         
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetButton("Vertical"))
         {
             Movement();
         }
