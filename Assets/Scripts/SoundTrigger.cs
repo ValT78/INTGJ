@@ -11,6 +11,7 @@ public class SoundTrigger : MonoBehaviour
     private SoundManager soundManager; // Référence au SoundManager
     private bool hasPlayed = false; // Variable pour s'assurer que le son ne se joue qu'une fois
     private bool hasShowUi = false; // Variable pour s'assurer que le son ne se joue qu'une fois
+    [SerializeField] private bool isToilette = false;
 
     [SerializeField] private GameObject UISting;
 
@@ -19,7 +20,7 @@ public class SoundTrigger : MonoBehaviour
         player = FindObjectOfType<TaonMovement>().transform; // Trouver le transform du joueur
         soundManager = FindObjectOfType<SoundManager>();
 
-        if (soundManager && soundEffect == soundManager.dialToilette)
+        if (isToilette)
         {
             foreach (UIMove ui in FindObjectsOfType<UIMove>())
             {
@@ -50,7 +51,6 @@ public class SoundTrigger : MonoBehaviour
                 soundManager.PlaySound(soundEffect);
                 
             }
-            
             // Marquer que le son a été joué
             hasPlayed = true;
         }
