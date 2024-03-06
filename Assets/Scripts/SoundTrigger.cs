@@ -10,6 +10,7 @@ public class SoundTrigger : MonoBehaviour
     [SerializeField] private AudioClip soundEffect; // Effet sonore à jouer
     private SoundManager soundManager; // Référence au SoundManager
     private bool hasPlayed = false; // Variable pour s'assurer que le son ne se joue qu'une fois
+    private bool hasShowUi = false; // Variable pour s'assurer que le son ne se joue qu'une fois
 
     [SerializeField] private GameObject UISting;
 
@@ -49,10 +50,7 @@ public class SoundTrigger : MonoBehaviour
                 soundManager.PlaySound(soundEffect);
                 
             }
-            if(UISting != null && distanceToPlayer < uiDistance)
-            {
-                UISting.SetActive(true);
-            }   
+            
             // Marquer que le son a été joué
             hasPlayed = true;
         }
@@ -60,6 +58,15 @@ public class SoundTrigger : MonoBehaviour
         else if (distanceToPlayer > triggerDistance)
         {
             hasPlayed = false;
+        }
+        if (!hasShowUi && UISting != null && distanceToPlayer < uiDistance)
+        {
+            UISting.SetActive(true);
+            hasShowUi = true;
+        }
+        else if (distanceToPlayer > uiDistance)
+        {
+            hasShowUi = false;
         }
     }
 }
