@@ -955,6 +955,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1897732098}
   - {fileID: 1356650181}
   - {fileID: 316400677}
   - {fileID: 669370166}
@@ -1022,6 +1023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1897732098}
   - component: {fileID: 1897732097}
+  - component: {fileID: 1897732099}
   m_Layer: 0
   m_Name: Video Player
   m_TagString: Untagged
@@ -1037,7 +1039,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897732096}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 084cc03ddf02b2c4487a7717e6e5a12f, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -1047,7 +1049,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
@@ -1073,13 +1075,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897732096}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 474.26627, y: 280.2377, z: 69.10158}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -75.02407, y: -33.732395, z: -195.31354}
+  m_LocalScale: {x: 9.345851, y: 9.345851, z: 9.345851}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1726322519}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1897732099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897732096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4183f5a1fa8424c46901847ce79aaebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoFilename: IntroVideo.mp4
+  videoPlayer: {fileID: 1897732097}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1088,4 +1104,3 @@ SceneRoots:
   - {fileID: 326259982}
   - {fileID: 1146453771}
   - {fileID: 1726322519}
-  - {fileID: 1897732098}

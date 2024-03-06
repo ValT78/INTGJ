@@ -6,66 +6,23 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
-public struct Data
-{
-    public string Name;
-    public string VideoURL;
-}
 
 public class StreamVideo : MonoBehaviour
 {
-    [SerializeField] Text uiNameText;
-    [SerializeField] RawImage uiRawImage;
-    string jsonURL = "https://drive.google.com/uc?export=download&id=1W5aw7-MBuu128VMULKA9XfgqLtl9j3uJ";
+    [SerializeField] string videoFilename;
+    [SerializeField] VideoPlayer videoPlayer;
 
     void Start()
     {
-        StartCoroutine(GetData(jsonURL));
+        PlayVideo();
     }
 
-    IEnumerator GetData(string url)
+    void PlayVideo()
     {
-        UnityWebRequest request = UnityWebRequest.Get(url);
-
-        yield return request.SendWebRequest();
-
-        if (request.isNetworkError || request.isHttpError)
-        {
-            // error ...
-
-        }
-        else
-        {
-            // success...
-            Data data = JsonUtility.FromJson<Data>(request.downloadHandler.text);
-
-
-            // Load image:
-            StartCoroutine(GetImage(data.VideoURL));
-        }
-
-        // Clean up any resources it is using.
-        request.Dispose();
+        string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, videoFilename);
+        videoPlayer.url = videoPath;
+        videoPlayer.Play();
     }
 
-    IEnumerator GetImage(string url)
-    {
-        UnityWebRequest request = UnityWebRequest.Get(url);
-
-        yield return request.SendWebRequest();
-
-        if (request.isNetworkError || request.isHttpError)
-        {
-            // error ...
-
-        }
-     else {
-         //success...
-         uiRawImage.texture = ((DownloadHandlerTexture) request.downloadHandler).texture ;
-      }
-
-
-// Clean up any resources it is using.
-request.Dispose();
-    }
+    
 }

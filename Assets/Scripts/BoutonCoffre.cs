@@ -15,6 +15,7 @@ public class BoutonCoffre : MonoBehaviour
     {
         Debug.Log("Coffre");
         ouvrirCoffre.coffreDébloqué = true;
+        if(soundManager != null)
         soundManager.PlaySound(soundManager.chest);
     }
 }

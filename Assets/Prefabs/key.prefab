@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4354162516999067320}
   - component: {fileID: 5243614863538810058}
   - component: {fileID: 7718940356578547280}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: "D\xE9t\xE9ction fen\xEAtre"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,8 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8100734, y: 0.24323031, z: 0.08029739}
-  m_Center: {x: 0.026216269, y: -0.05926483, z: 0.00043247637}
+  m_Size: {x: 1.5404415, y: 0.40316224, z: 0.4009266}
+  m_Center: {x: 0.39140034, y: 0.02070123, z: -0.012242973}
 --- !u!114 &7718940356578547280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,7 +76,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7374467779598545575}
   - component: {fileID: 7472906042245064698}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: bout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 7833659178121483213}
   - component: {fileID: 7565495486883654282}
   - component: {fileID: 5363589892181092429}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: porter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,8 +185,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5554843, y: 0.40074986, z: 0.24674301}
-  m_Center: {x: 0.5431221, y: -0.030411366, z: 0.004603456}
+  m_Size: {x: 2.0391834, y: 1.1211622, z: 1.5263032}
+  m_Center: {x: 0.51151526, y: 0.03929043, z: 0.10827297}
 --- !u!1001 &8153927127756374734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -257,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b02fb8835a7c8074fb1006a6d334a9c1, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

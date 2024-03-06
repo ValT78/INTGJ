@@ -19,14 +19,11 @@ public class Anviil : MonoBehaviour
         {
             StartCoroutine(apiculteur.SmoothSquash());
             Instantiate(key,this.transform.position, Quaternion.identity);
+            if(soundManager != null)
             soundManager.PlaySound(soundManager.anvil);
-            StartCoroutine(Destruction());
+            GetComponent<BoxCollider>().enabled = false;
         }
     }
 
-    IEnumerator Destruction()
-    {
-        yield return new WaitForSeconds(1.0f);
-        Destroy(enclume);
-    }
+    
 }

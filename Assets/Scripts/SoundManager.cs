@@ -87,6 +87,10 @@ public class SoundManager : MonoBehaviour
             nextLoop = bzz1;
             StartCoroutine(PlayNextLoop());
         }
+        else if (scene.isLoaded && scene.buildIndex == 3)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public AudioClip GetCurrentMusic()
